@@ -1,3 +1,51 @@
+/*
+==========================================================
+⚠️ IMPORTANT NOTICE – SIMULATION ONLY ⚠️
+==========================================================
+
+This app is a Proof of Concept (POC) and uses **predefined, 
+simulated Bluetooth device scanning and network results**.
+
+What this means:
+- The "Scan Devices" feature currently shows a FIXED device list.
+- No real Bluetooth scanning or WiFi network scanning happens in this POC.
+
+If you want to make this a REAL, working application:
+
+1️⃣ Add the Required Packages:
+   Open `pubspec.yaml` and add:
+     flutter_blue_plus: ^<latest_version>
+     network_info_plus: ^<latest_version>
+     ping_discover_network: ^<latest_version>
+
+2️⃣ Configure App Permissions:
+   - **Android:** Edit `AndroidManifest.xml` to include Bluetooth, 
+     location, and network scanning permissions.
+   - **iOS:** Edit `Info.plist` to include Bluetooth usage descriptions.
+
+3️⃣ Replace Simulation Logic:
+   - In `DeviceConfigScreen`:
+       Replace `_startScan` and `_sendConfiguration` with calls 
+       to `flutter_blue_plus` API.
+       Use your hardware's **Service UUID** and **Characteristic UUID** 
+       to send the WiFi SSID, password, and IP address.
+   - In `NetworkScannerScreen`:
+       Replace `_scanNetwork` with logic using:
+         - `network_info_plus` (to get the subnet)
+         - `ping_discover_network` (to find live devices on the network)
+
+4️⃣ Add Error Handling:
+   - Handle cases like Bluetooth off, permissions denied, or device not found.
+   - Show appropriate error messages to users.
+
+==========================================================
+💡 TIP: Keep this comment here so future developers understand 
+that this project is a POC and needs real integration work 
+before production use.
+==========================================================
+*/
+
+
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dart:math';
