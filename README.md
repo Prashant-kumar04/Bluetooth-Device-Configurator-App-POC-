@@ -52,7 +52,7 @@ bash
 Copy
 Edit
 # Clone the repository
-git clone https://github.com/yourusername/bluetooth-device-configurator.git
+git clone https://github.com/Prashant-kumar04/bluetooth-device-configurator.git
 cd bluetooth-device-configurator
 
 # Install dependencies
